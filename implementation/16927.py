@@ -30,7 +30,7 @@ def turn(data, R):
 
             if i == t and j == t:
                 break
-
+        # print(numbers)
         if R % len(numbers) == 0:
             r = numbers.pop(0)
             numbers.append(r)
@@ -38,7 +38,7 @@ def turn(data, R):
             for _ in range((R % len(numbers))-1):
                 r = numbers.pop()
                 numbers.insert(0, r)
-
+        # print(numbers)
         k = 0
 
         while True:

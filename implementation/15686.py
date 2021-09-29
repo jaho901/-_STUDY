@@ -40,7 +40,7 @@ def choose(cur, cnt):
 
 choose(0, 0)
 # chi_list = list(combinations(num, 2))
-# print(chi_list)
+print(chi_list)
 
 def distance(idx_1, chi):
     minimum_1 = 1e9
