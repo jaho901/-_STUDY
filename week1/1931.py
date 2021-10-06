@@ -5,6 +5,7 @@ N = int(input())
 data = []
 for _ in range(N):
     data.append(list(map(int, input().split())))
+print(data)
 data = sorted(data, key=lambda x: x[0])
 data = sorted(data, key=lambda y: y[1])
 
