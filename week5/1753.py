@@ -2,6 +2,7 @@ import sys
 sys.stdin = open('input.txt')
 from heapq import heappush, heappop
 
+
 '''
 input() : 내장함수로 입력받기 전 prompt message를 출력
           & 입력받은 값의 개행 문자를 삭제시켜서 리턴
