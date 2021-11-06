@@ -2,6 +2,13 @@ import sys
 sys.stdin = open('1717.txt')
 
 def find(x):
+    '''
+    if parent[x] == x:
+        return x
+    else:
+        return parent[x]
+    '''
+    # Path Compression
     if parent[x] == x:
         return x
     else:
