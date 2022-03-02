@@ -1,10 +1,49 @@
-info = [0,0,1,1,1,0,1,0,1,0,1,1]
-edges = [[0,1],[1,2],[1,4],[0,8],[8,7],[9,10],[9,11],[4,3],[6,5],[4,6],[8,9]]
+# info = [0,0,1,1,1,0,1,0,1,0,1,1]
+# edges = [[0,1],[1,2],[1,4],[0,8],[8,7],[9,10],[9,11],[4,3],[6,5],[4,6],[8,9]]
 
-# info = [0,1,0,1,1,0,1,0,0,1,0]
-# edges = [[0,1],[0,2],[1,3],[1,4],[2,5],[2,6],[3,7],[4,8],[6,9],[9,10]]
+info = [0,1,0,1,1,0,1,0,0,1,0]
+edges = [[0,1],[0,2],[1,3],[1,4],[2,5],[2,6],[3,7],[4,8],[6,9],[9,10]]
 
-# from collections import defaultdict, deque
+is_wolf = list()
+data = list()
+result = 0
+def solution(info, edges):
+    global is_wolf, result, data
+    is_wolf = info
+    visited = [False]*len(is_wolf)
+    data = [[] for _ in range(len(is_wolf))]
+    for start, end in edges:
+        data[start].append(end)
+    find(0, 0, 0, visited, [])
+    return result
+
+def find(cur, nwolf, nsheep, visited, can_next):
+    global is_wolf, result, data
+    if visited[cur]:
+        return
+    else:
+        visited[cur] = True
+
+    if is_wolf[cur] == 1:
+        nwolf += 1
+    else:
+        nsheep += 1
+        result = max(result, nsheep)
+
+    if nwolf >= nsheep:
+        return
+
+    for i in data[cur]:
+        can_next.append(i)
+
+    for next in can_next:
+        find(next, nwolf, nsheep, visited[:], can_next=[can for can in can_next if can!=next and not visited[can]])
+
+
+print(solution(info, edges))
+
+
+'''
 from copy import deepcopy
 
 is_wolf = list()
@@ -47,3 +86,4 @@ def find_max_recursive(current_loc, used, nsheep, nwolf, can_go):
                            can_go=[loc for loc in can_go if loc != next_loc and not used[loc]])
 
 print(solution(info, edges))
+'''
