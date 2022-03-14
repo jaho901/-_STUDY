@@ -36,7 +36,7 @@ def solution(new_id):
     if len(sub_result) >= 1 and sub_result[-1] == '.':
         n = len(sub_result)
         sub_result = sub_result[:n-1]
-
+    # 5단계
     if len(sub_result) == 0:
         sub_result = 'a'
     # 6단계

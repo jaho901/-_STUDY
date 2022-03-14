@@ -61,7 +61,8 @@ print(solution(info, query))
 #             if j != 'and':
 #                 sub_list.append(j)
 #         end.append(sub_list)
-#
+#     print(start)
+#     print(end)
 #     result = []
 #
 #     for i in end:
