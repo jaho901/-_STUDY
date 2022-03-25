@@ -31,6 +31,9 @@ for k in range(1, N+1):
         for j in range(1, N+1):
             node[i][j] = min(node[i][j], node[i][k]+node[k][j])
 
+for aa in node:
+    print(aa)
+
 result = []
 for x in range(1, N+1):
     result.append(max(node[x][1:]))
