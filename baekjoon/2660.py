@@ -1,6 +1,5 @@
 import sys
 sys.stdin = open('2660.txt')
-
 '''
 #플로이드 와샬
 # k : 경유지
